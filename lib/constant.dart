@@ -6,5 +6,7 @@ TextStyle subTitle = GoogleFonts.poppins();
 TextStyle desc = GoogleFonts.poppins();
 TextStyle titlev2 = GoogleFonts.robotoMono();
 
-Color colorDefault  = const Color.fromARGB(255, 58, 166, 255);
+Color colorDefault  = const Color(0xffCDF5FD);
 Color bgColor = const Color(0xffFFF5C2);
+
+String baseUrl = 'http://192.168.86.13:1337';

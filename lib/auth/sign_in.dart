@@ -11,7 +11,7 @@ class SignInPage extends StatelessWidget {
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
  return Scaffold(
-      backgroundColor: Color(0xffCDF5FD),
+      backgroundColor: colorDefault,
       body: SingleChildScrollView(
         child: SafeArea(child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,55 +23,60 @@ class SignInPage extends StatelessWidget {
             Center(child: Text('Smart Concept, Simple Usage \n For UMKM Indonesia', style: title.copyWith(fontSize: 18, fontWeight: FontWeight.w600, fontStyle: FontStyle.italic),textAlign: TextAlign.center,)),
             const SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Text('Enter your account', style: subTitle.copyWith(fontWeight: FontWeight.bold, fontSize: 17),),
             ),
             const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email address',
+              child: Container(
+                 padding: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: const TextField(
                   
-                  focusColor: Colors.blue,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email address',
                     
+                    focusColor: Colors.blue,
+                    focusedBorder: InputBorder.none,
+                    border: InputBorder.none
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    
-                  )
                 ),
               ),
             ),
             const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
-             
-                  focusColor: Colors.blue,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: const TextField(
+                  
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    fillColor: Colors.white,
+                    hoverColor: Colors.white,
+                    focusColor: Colors.blue,
+                    focusedBorder: InputBorder.none,
+                    border: InputBorder.none
+                      
                     
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    
-                  )
                 ),
               ),
             ),
             const SizedBox(height: 20,),
             Center(
               child: Container(
-                height: 70,
+                height: 50,
                 width: 300,
                 decoration: 
                 BoxDecoration(
