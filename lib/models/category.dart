@@ -1,16 +1,10 @@
 import 'dart:convert';
 
-List<Categoryy> popularCategoryListFromJson(String val) {
-  List<dynamic>? jsonData = json.decode(val)['data'];
+List<Categoryy> popularCategoryListFromJson(String val) =>
+    List<Categoryy>.from(json.decode(val)['data']
+        .map((category) => Categoryy.popularCategoryFromJson(category))
+    );
 
-  if (jsonData == null) {
-    // Handle the case where 'data' is null
-    return [];
-  }
-
-  return List<Categoryy>.from(jsonData.map((category) =>
-      Categoryy.popularCategoryFromJson(category as Map<String, dynamic>)));
-}
 
 class Categoryy {
   final int id;
@@ -21,9 +15,8 @@ class Categoryy {
 
   factory Categoryy.popularCategoryFromJson(Map<String, dynamic> data) =>
       Categoryy(
-        id: data['id'],
-        name: data['attributes']['category']['data']['attributes']['name'],
-        image: data['attributes']['category']['data']['attributes']['image']
-            ['data']['attributes']['url'],
-      );
+          id: data['id'],
+          name: data['attributes']['category']['data']['attributes']['name'],
+          image: data['attributes']['category']['data']['attributes']['image']
+              ['data']['attributes']['url']);
 }
